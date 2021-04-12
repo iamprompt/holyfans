@@ -2,6 +2,24 @@
 
 Project Phase 1 by Group 1 Section 3
 
+## How to DEV
+
+```bash
+# Install Dependencies
+yarn
+
+# Dev on Local
+yarn dev
+
+# Preview on Local
+yarn serve
+
+# Build to Production
+yarn build
+```
+
+**Remark:** The generated build will be in `/dist` folder
+
 ## Members
 
 - Thanapat Jumnongrat (Palm) ID: 6288018
