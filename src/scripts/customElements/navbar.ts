@@ -45,23 +45,23 @@ class NavBar extends HTMLElement {
 
     const LogoPictureContainer = document.createElement('picture')
     const LogoAVIF = document.createElement('source')
-    LogoAVIF.srcset = '/assets/logo/lockup_color_horizontal.avif'
+    LogoAVIF.srcset = `${baseUrl}/assets/logo/lockup_color_horizontal.avif`
     LogoAVIF.type = 'image/avif'
 
     const LogoWEBP = document.createElement('source')
-    LogoWEBP.srcset = '/assets/logo/lockup_color_horizontal.webp'
+    LogoWEBP.srcset = `${baseUrl}/assets/logo/lockup_color_horizontal.webp`
     LogoWEBP.type = 'image/webp'
 
     const LogoSVG = document.createElement('source')
-    LogoSVG.srcset = '/assets/logo/lockup_color_horizontal.svg'
+    LogoSVG.srcset = `${baseUrl}/assets/logo/lockup_color_horizontal.svg`
     LogoSVG.type = 'image/svg+xml'
 
     const LogoPNG = document.createElement('source')
-    LogoPNG.srcset = '/assets/logo/lockup_color_horizontal.png'
+    LogoPNG.srcset = `${baseUrl}/assets/logo/lockup_color_horizontal.png`
     LogoPNG.type = 'image/png'
 
     const Logo = document.createElement('img')
-    Logo.src = '/assets/logo/lockup_color_horizontal.svg'
+    Logo.src = `${baseUrl}/assets/logo/lockup_color_horizontal.png`
     Logo.alt = 'HolyFans'
     Logo.classList.add('h-10')
 
