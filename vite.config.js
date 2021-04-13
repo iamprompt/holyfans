@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
+const baseUrl = process.env.APP_ENV === 'PROD' ? '/holyfans/' : '/'
+
 export default defineConfig({
   root: 'src', // Root Directory
   publicDir: '../public', // Public Directory (from root)
-  base: '/holyfans/',
+  base: baseUrl,
   build: {
     outDir: '../dist',
     rollupOptions: {

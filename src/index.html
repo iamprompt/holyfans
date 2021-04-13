@@ -2,17 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Design your best fortune with the best fortune tellers"
+    />
+
+    <!-- Icon to display in title bar -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <!-- Open graph meta for sharing purpose -->
+    <meta property="og:title" content="HolyFans | Design your best fortune" />
+    <meta
+      property="og:description"
+      content="Design your best fortune with the best fortune tellers"
+    />
+    <!-- <meta
+      property="og:image"
+      content="https://iamprompt.github.io/holyfans/assets/img.jpg"
+    /> -->
+
+    <!-- Title -->
+    <title>HolyFans | Design your best fortune</title>
   </head>
   <body>
     <div id="app">
-      <h1>Hello Vite!</h1>
-      <a href="https://vitejs.dev/guide/features.html" target="_blank"
-        >Documentation</a
-      >
+      <nav-bar />
     </div>
     <script type="module" src="./scripts/main.ts"></script>
+    <script type="module" src="./scripts/customElements/index.ts"></script>
   </body>
 </html>
