@@ -8,9 +8,9 @@ type TNavItem = {
 
 const NAV: TNavItem[] = [
   { title: 'Home', target: `${baseUrl}/` },
-  { title: 'Explore', target: `${baseUrl}/explore.html` },
-  { title: 'About Us', target: `${baseUrl}/aboutus.html` },
-  { title: 'Login', target: `${baseUrl}/login.html`, icon: 'login' },
+  { title: 'Explore', target: `${baseUrl}/explore` },
+  { title: 'About Us', target: `${baseUrl}/aboutus` },
+  { title: 'Login', target: `${baseUrl}/login`, icon: 'login' },
 ]
 
 class NavBar extends HTMLElement {
