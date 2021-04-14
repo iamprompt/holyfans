@@ -13,6 +13,8 @@ export default defineConfig({
       input: [
         resolve(__dirname, 'src/index.html'),
         resolve(__dirname, 'src/aboutus.html'),
+        resolve(__dirname, 'src/explore.html'),
+        resolve(__dirname, 'src/result.html'),
       ],
     },
   },

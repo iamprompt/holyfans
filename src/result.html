@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Design your best fortune with the best fortune tellers"
+    />
+
+    <!-- Icon to display in title bar -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <!-- Open graph meta for sharing purpose -->
+    <meta property="og:title" content="Explore | HolyFans" />
+    <meta
+      property="og:description"
+      content="Design your best fortune with the best fortune tellers"
+    />
+    <!-- <meta
+      property="og:image"
+      content="https://iamprompt.github.io/holyfans/assets/img.jpg"
+    /> -->
+
+    <!-- Title -->
+    <title>Explore | HolyFans</title>
+  </head>
+  <body class="relative">
+    <nav-bar></nav-bar>
+    <main class="min-h-screen h-full pt-20 pb-10 max-w-screen-md mx-auto">
+      <div class="m-10 text-center">
+        <h1 class="font-bold text-5xl">Explore the magic</h1>
+      </div>
+
+      <search-bar></search-bar>
+
+      <!-- Result Section -->
+      <section class="mt-14 w-full">
+        <div>
+          <h2 class="text-center text-xl font-bold mb-5">
+            Result for "<span id="search_key_text"></span>"
+          </h2>
+        </div>
+        <div id="result-container" class="block space-y-5">
+          <a
+            href="./profile.html"
+            class="bg-white shadow-lg flex flex-col sm:flex-row p-3 rounded-3xl mx-2 sm:mx-0"
+          >
+            <div class="relative flex-shrink-0">
+              <img
+                src="./assets/explore/horo_teller/horo-3.jpg"
+                alt=""
+                class="aspect-w-1 aspect-h-1 w-full sm:h-48 sm:w-48 rounded-2xl object-cover"
+              />
+              <div
+                class="absolute sm:hidden right-2 top-2 bg-yellow-200 text-white rounded-full py-1 px-3 text-center text-xs sm:text-sm"
+              >
+                <i class="fas fa-star h-3 inline-block"></i>
+                99K+
+              </div>
+            </div>
+            <div class="mt-5 sm:mx-6 sm:mt-3 flex-grow">
+              <h2 class="font-bold text-2xl sm:text-3xl mb-2">
+                Name of the teller
+              </h2>
+              <p class="overflow-ellipsis overflow-hidden">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repellendus velit voluptates at iusto nemo numquam accusamus
+                natus illum asperiores recusandae?
+              </p>
+            </div>
+            <div class="hidden sm:block flex-shrink-0 justify-end">
+              <div class="text-right mt-6">
+                <div class="text-3xl">69</div>
+                Followers
+              </div>
+              <div
+                class="mt-5 bg-yellow-200 text-white rounded-full p-1 text-center text-sm w-24"
+              >
+                <i class="fas fa-star h-4 inline-block"></i>
+                99K+
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <holy-footer></holy-footer>
+    <script type="module" src="./scripts/main.ts"></script>
+    <script type="module" src="./scripts/customElements/index.ts"></script>
+    <script type="module" src="./scripts/search.ts"></script>
+  </body>
+</html>
