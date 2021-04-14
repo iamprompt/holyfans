@@ -1,0 +1,1 @@
+import"./index.0b989521.js";const e=new URLSearchParams(window.location.search).get("search_keyword"),t=document.getElementById("search_keyword"),o=document.getElementById("search_key_text");console.log(t),t.setAttribute("value",e),o.textContent=e;
