@@ -5,6 +5,7 @@ const NAV = [
   { title: 'Explore', target: `${baseUrl}/explore.html` },
   { title: 'About Us', target: `${baseUrl}/aboutus.html` },
   { title: 'Login', target: `${baseUrl}/login.html`, icon: 'login' },
+  { title: 'Logout', target: `${baseUrl}/logout.html`, icon: 'logout' },
 ]
 
 class NavBar extends HTMLElement {
@@ -110,10 +111,19 @@ class NavBar extends HTMLElement {
       'text-gray-700',
     )
 
+    const currentToken = localStorage.getItem('token')
+
     NAV.forEach((item) => {
       // console.log(item)
       const currentPath = window.location.pathname
       // console.log(currentPath)
+
+      if (currentToken && item.title === 'Login') {
+        return
+      }
+      if (!currentToken && item.title === 'Logout') {
+        return
+      }
 
       const NavList = document.createElement('li')
       NavList.classList.add('py-2')

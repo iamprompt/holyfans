@@ -1,5 +1,16 @@
 import { baseUrl } from '../utilities'
 
+const advancedSearchModule = {
+  categories: {
+    name: 'Categories',
+    option: [
+      { name: 'Cat 1', value: 'cat-1' },
+      { name: 'Cat 2', value: 'cat-2' },
+      { name: 'Cat 3', value: 'cat-3' },
+    ],
+  },
+}
+
 export class SearchBar extends HTMLElement {
   constructor() {
     super()
@@ -54,9 +65,86 @@ export class SearchBar extends HTMLElement {
 
     FormSubmitButton.append(SearchIcon)
 
-    FormContainer.append(FormLabel, FormInput, FormSubmitButton)
+    const AllAdvancedSearchContainer = document.createElement('div')
+    AllAdvancedSearchContainer.classList.add(
+      'flex',
+      'flex-col',
+      'mx-auto',
+      'mt-3',
+      'items-end',
+      'space-y-3',
+    )
+
+    const AdvancedSearchText = document.createElement('div')
+    AdvancedSearchText.classList.add('flex', 'items-center', 'cursor-pointer')
+    AdvancedSearchText.id = 'advanced-search-btn'
+    AdvancedSearchText.textContent = 'Advanced Search'
+
+    const EMoreIcon = document.createElement('span')
+    EMoreIcon.classList.add('material-icons-round')
+    EMoreIcon.textContent = 'expand_more'
+    AdvancedSearchText.append(EMoreIcon)
+
+    AllAdvancedSearchContainer.append(AdvancedSearchText)
+
+    const AdvancedSelectContainer = document.createElement('div')
+    AdvancedSelectContainer.classList.add('w-full', 'hidden')
+
+    Object.keys(advancedSearchModule).forEach((k) => {
+      const ASearchContainer = document.createElement('div')
+      ASearchContainer.classList.add('w-full')
+
+      const SelectSearch = document.createElement('select')
+      SelectSearch.name = k.toLowerCase()
+      SelectSearch.id = k.toLowerCase()
+      SelectSearch.classList.add(
+        'block',
+        'w-full',
+        'appearance-none',
+        'rounded-xl',
+        'bg-gray-100',
+        'focus:bg-gray-50',
+        'border-0',
+        'focus:ring',
+        'focus:ring-pink-400',
+      )
+
+      const NullOption = document.createElement('option')
+      NullOption.value = null
+      NullOption.textContent = `-- ${advancedSearchModule[k].name} --`
+      SelectSearch.append(NullOption)
+
+      advancedSearchModule[k].option.forEach((o) => {
+        const VOption = document.createElement('option')
+        VOption.value = o.value
+        VOption.textContent = `${o.name}`
+        SelectSearch.append(VOption)
+      })
+
+      ASearchContainer.append(SelectSearch)
+      AdvancedSelectContainer.append(ASearchContainer)
+    })
+
+    AllAdvancedSearchContainer.append(AdvancedSelectContainer)
+
+    FormContainer.append(
+      FormLabel,
+      FormInput,
+      FormSubmitButton,
+      AllAdvancedSearchContainer,
+    )
 
     Container.appendChild(FormContainer)
     this.append(Container)
+
+    this.querySelector('#advanced-search-btn').addEventListener('click', () => {
+      if (AdvancedSelectContainer.classList.contains('hidden')) {
+        EMoreIcon.textContent = 'expand_less'
+        AdvancedSelectContainer.classList.remove('hidden')
+      } else {
+        EMoreIcon.textContent = 'expand_more'
+        AdvancedSelectContainer.classList.add('hidden')
+      }
+    })
   }
 }

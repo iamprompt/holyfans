@@ -5,23 +5,25 @@ if (tokenExist) {
   window.location.href = `${baseUrl}/explore.html` // Redirect to explore page
 }
 
-const LoginForm = document.getElementById('loginForm')
+const RegisterForm = document.getElementById('registerForm')
 
-LoginForm.addEventListener('submit', async (e) => {
+RegisterForm.addEventListener('submit', async (e) => {
   e.preventDefault()
   const { target } = e
 
-  const email = target[0].value
-  const password = target[1].value
-
-  console.log(email, password)
+  const firstName = target[0].value
+  const lastName = target[1].value
+  const email = target[2].value
+  const password = target[3].value
 
   const postData = {
+    firstName,
+    lastName,
     email,
     password,
   }
 
-  const loginStatus = await fetch(`${baseApiUrl}/auth/login`, {
+  const registerStatus = await fetch(`${baseApiUrl}/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,13 +31,16 @@ LoginForm.addEventListener('submit', async (e) => {
     body: JSON.stringify(postData),
   })
 
-  const loginRes = await loginStatus.json()
-  const token = loginRes.payload.token
+  const registerRes = await registerStatus.json()
 
-  if (!token) {
-    alert(loginRes.payload)
+  if (registerStatus.status !== 200) {
+    alert(registerRes.payload)
     return
   }
+
+  console.log(registerRes)
+
+  const token = registerRes.payload.token
 
   localStorage.setItem('token', token) // Set token to local storage
 

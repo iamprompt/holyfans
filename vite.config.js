@@ -16,6 +16,7 @@ export default defineConfig({
         resolve(__dirname, 'src/explore.html'),
         resolve(__dirname, 'src/result.html'),
         resolve(__dirname, 'src/login.html'),
+        resolve(__dirname, 'src/logout.html'),
         resolve(__dirname, 'src/register.html'),
       ],
     },
