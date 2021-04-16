@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Design your best fortune with the best fortune tellers"
+    />
+
+    <!-- Icon to display in title bar -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <!-- Open graph meta for sharing purpose -->
+    <meta property="og:title" content="Login | Login to Holyfans" />
+    <meta
+      property="og:description"
+      content="Design your best fortune with the best fortune tellers"
+    />
+    <!-- <meta
+      property="og:image"
+      content="https://iamprompt.github.io/holyfans/assets/img.jpg"
+    /> -->
+
+    <!-- Title -->
+    <title>Login | Holyfans</title>
+  <script type="module" crossorigin src="/holyfans/assets/login.6ef44307.js"></script>
+  <link rel="modulepreload" href="/holyfans/assets/index.f3eae361.js">
+  <link rel="stylesheet" href="/holyfans/assets/index.567d8b6e.css">
+</head>
+
+  <body class="relative">
+    <nav-bar></nav-bar>
+    <!-- Container -->
+    <main
+      class="min-h-screen max-w-screen-md flex flex-col justify-center mx-auto px-5"
+    >
+      <!-- Header -->
+      <div class="font-bold text-5xl md:text-7xl space-y-3">
+        <!-- Header Text -->
+        <h1>Hello.</h1>
+        <h1>Welcome Back</h1>
+      </div>
+      <!-- Main Body -->
+      <div class="mt-10">
+        <!-- Login Form -->
+        <form class="space-y-8" id="loginForm">
+          <!-- Email Address Field -->
+          <div>
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              title="Please enter a valid email address"
+              autocomplete="email"
+              value="iamprompt@gmail.com"
+              class="mt-2 appearance-none py-3 px-3 w-full rounded-2xl border-none bg-gray-100 focus:bg-gray-50 shadow-md focus:shadow-lg focus:ring focus:ring-pink-400"
+            />
+          </div>
+          <!-- Password Field -->
+          <div>
+            <label for="password">Password</label>
+            <div class="relative mt-2">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value="12345678"
+                class="appearance-none py-3 px-3 w-full rounded-2xl border-none bg-gray-100 focus:bg-gray-50 shadow-md focus:shadow-lg focus:ring focus:ring-pink-400"
+              />
+              <!-- Password Visible Swap -->
+              <span
+                id="passwordVisText"
+                class="absolute inset-y-0 right-4 flex items-center cursor-pointer"
+                onclick="togglePasswordVis()"
+              >
+                SHOW
+              </span>
+            </div>
+          </div>
+          <!-- Login Button -->
+          <div>
+            <button
+              type="submit"
+              class="bg-gradient-to-r from-blue-400 to-purple-500 w-full py-3 rounded-2xl shadow-md text-lg text-white focus:outline-none"
+            >
+              Sign in
+            </button>
+          </div>
+          <!-- Sign up Text -->
+          <div class="text-center text-gray-500">
+            Don't have an account? Let's
+            <a href="./register.html" class="text-blue-500 hover:text-blue-800"
+              >Sign up</a
+            >
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <holy-footer></holy-footer>
+
+    
+    
+    
+  </body>
+</html>
