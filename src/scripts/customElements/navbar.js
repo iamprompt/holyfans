@@ -1,12 +1,6 @@
 import { baseUrl } from '../utilities'
 
-type TNavItem = {
-  title: string
-  target: string
-  icon?: string
-}
-
-const NAV: TNavItem[] = [
+const NAV = [
   { title: 'Home', target: `${baseUrl}/` },
   { title: 'Explore', target: `${baseUrl}/explore.html` },
   { title: 'About Us', target: `${baseUrl}/aboutus.html` },
@@ -156,10 +150,8 @@ class NavBar extends HTMLElement {
     this.querySelector('#menu-btn')?.addEventListener(
       'click',
       ({ target: t }) => {
-        const targetRef = t as HTMLElement
-        const navContentRef = document.getElementById(
-          'nav-content',
-        ) as HTMLElement
+        const targetRef = t
+        const navContentRef = document.getElementById('nav-content')
         // console.log(targetRef.innerHTML)
 
         if (navContentRef.classList.contains('hidden')) {
