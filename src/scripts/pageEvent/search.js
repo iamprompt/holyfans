@@ -1,5 +1,5 @@
-import { baseUrl, baseApiUrl } from './utilities'
-import { ResultCard } from './customElements/resultCard'
+import { baseUrl, baseApiUrl } from '../utilities'
+import { ResultCard } from '../customElements/resultCard'
 
 // Get search keyword from search parameters (?search_keyword=...)
 const searchParams = new URLSearchParams(window.location.search)
