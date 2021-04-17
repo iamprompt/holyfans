@@ -4,9 +4,28 @@ const advancedSearchModule = {
   categories: {
     name: 'Categories',
     option: [
-      { name: 'Cat 1', value: 'cat-1' },
-      { name: 'Cat 2', value: 'cat-2' },
-      { name: 'Cat 3', value: 'cat-3' },
+      { name: 'Tarot', value: 'Tarot' },
+      { name: 'Thai Horo', value: 'Thai Horo' },
+      { name: 'Chinese Horo', value: 'Chinese Horo' },
+      { name: 'Zodiac Sign', value: 'Zodiac Sign' },
+      { name: 'Candle prediction', value: 'Candle prediction' },
+      { name: 'Feng Shui', value: 'Feng Shui' },
+    ],
+  },
+  area: {
+    name: 'Area',
+    option: [
+      { name: 'Bangkok', value: 'Bangkok' },
+      { name: 'Central', value: 'Central' },
+    ],
+  },
+  price_range: {
+    name: 'Price Range',
+    option: [
+      { name: '0฿ - 100฿', value: '1' },
+      { name: '101฿ - 300฿', value: '2' },
+      { name: '300฿ - 500฿', value: '3' },
+      { name: '500฿ - 1,000฿', value: '4' },
     ],
   },
 }
@@ -88,7 +107,7 @@ export class SearchBar extends HTMLElement {
     AllAdvancedSearchContainer.append(AdvancedSearchText)
 
     const AdvancedSelectContainer = document.createElement('div')
-    AdvancedSelectContainer.classList.add('w-full', 'hidden')
+    AdvancedSelectContainer.classList.add('w-full', 'hidden', 'space-y-3')
 
     Object.keys(advancedSearchModule).forEach((k) => {
       const ASearchContainer = document.createElement('div')
@@ -110,7 +129,7 @@ export class SearchBar extends HTMLElement {
       )
 
       const NullOption = document.createElement('option')
-      NullOption.value = null
+      NullOption.value = ''
       NullOption.textContent = `-- ${advancedSearchModule[k].name} --`
       SelectSearch.append(NullOption)
 
