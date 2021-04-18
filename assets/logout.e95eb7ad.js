@@ -1,0 +1,1 @@
+import{a as e,b as o}from"./index.11dae847.js";(async()=>{localStorage.getItem("token")||(window.location.href=`${e}/`),await fetch(`${o}/auth/logout`,{method:"POST",headers:{authorization:`Bearer ${localStorage.getItem("token")}`}}),localStorage.removeItem("token"),window.location.href=`${e}/`})();
