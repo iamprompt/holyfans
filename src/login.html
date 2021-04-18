@@ -103,6 +103,19 @@
     <script type="module" src="./scripts/main.js"></script>
     <script type="module" src="./scripts/customElements/index.js"></script>
     <script type="module" src="./scripts/pageEvent/login.js"></script>
-    <script src="./scripts/pageEvent/inputInteraction.js"></script>
+    <script>
+      const togglePasswordVis = () => {
+        const passwordBoxRef = document.getElementById('password')
+        const passwordVisTextRef = document.getElementById('passwordVisText')
+
+        if (passwordBoxRef.type === 'password') {
+          passwordBoxRef.type = 'text'
+          passwordVisTextRef.textContent = 'HIDE'
+        } else {
+          passwordBoxRef.type = 'password'
+          passwordVisTextRef.textContent = 'SHOW'
+        }
+      }
+    </script>
   </body>
 </html>
