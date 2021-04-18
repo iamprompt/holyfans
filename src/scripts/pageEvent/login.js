@@ -30,12 +30,16 @@ LoginForm.addEventListener('submit', async (e) => {
   })
 
   const loginRes = await loginStatus.json()
-  const token = loginRes.payload.token
+  const {
+    payload: { token, user },
+  } = loginRes
 
   if (!token) {
     alert(loginRes.payload)
     return
   }
+
+  alert(`Hello ${user.firstName} (${user.role})`)
 
   localStorage.setItem('token', token) // Set token to local storage
 
