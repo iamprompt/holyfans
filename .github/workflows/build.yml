@@ -31,6 +31,8 @@ jobs:
         run: yarn
 
       - name: Run Build 👀
+        env:
+          VITE_GAPI_KEY: ${{ secrets.GAPI_KEY }}
         run: yarn build
 
       - name: Deploy to Github Pages 🚀

@@ -39,8 +39,6 @@ export class ResultCard extends HTMLElement {
     TellerImage.src = img
     TellerImage.alt = name
     TellerImage.classList.add(
-      'aspect-w-1',
-      'aspect-h-1',
       'w-full',
       'sm:h-48',
       'sm:w-48',
@@ -58,7 +56,11 @@ export class ResultCard extends HTMLElement {
 
     const TellerDescription = document.createElement('p')
     TellerDescription.textContent = desc
-    TellerDescription.classList.add('overflow-ellipsis', 'overflow-hidden')
+    TellerDescription.classList.add(
+      'overflow-ellipsis',
+      'overflow-hidden',
+      'line-clamp-3',
+    )
 
     TellerTextContainer.append(TellerName, TellerDescription)
     ResultCardContainer.append(TellerImageContainer, TellerTextContainer)
